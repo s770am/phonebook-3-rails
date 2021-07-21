@@ -1,0 +1,10 @@
+<h1>This is Dovids Phone Book (the third one)</h1>
+
+ <%= link_to "add new", contacts_new_path  %>
+<ul>
+<% @contacts.each do |c| %>
+    <li><%= c.name %> 
+    <p><%= c.number %> <%= link_to "edit", edit_picture_path(c) %> <%= link_to "destroy", delete_contact_path(c), method: :delete, data: {confirm: "please do not destroy me!!!"} %></p>
+    </li>
+<% end %>
+</ul>
